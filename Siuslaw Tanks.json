@@ -533,6 +533,15 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Tank pack (80 assets)/PNG/Retina/0302cba44030193587119567a39716daf2c512b5b206a8e9dd561af4ec7254fd_Tank Bullet 2_flying.png",
           "name": "gdevelop-asset-store"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/NewSprite.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -564,7 +573,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.24672586957406714,
+        "zoomFactor": 0.3010461197182514,
         "windowMask": false
       },
       "objectsGroups": [
@@ -782,21 +791,6 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 128,
-          "layer": "",
-          "name": "GroundLayer2",
-          "persistentUuid": "926b188d-d2bd-4241-8b21-8ff5ad862271",
-          "width": 1600,
-          "x": 0,
-          "y": 576,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
           "height": 192,
           "layer": "",
           "name": "Checkpoint",
@@ -832,8 +826,8 @@
           "name": "GroundLayer2",
           "persistentUuid": "82686eae-90a3-4f13-9bf5-98424f1c64d6",
           "width": 1600,
-          "x": 0,
-          "y": 960,
+          "x": -32,
+          "y": 608,
           "zOrder": 16,
           "numberProperties": [],
           "stringProperties": [],
@@ -1456,6 +1450,23 @@
           "x": 6016,
           "y": 768,
           "zOrder": 23,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 128,
+          "keepRatio": true,
+          "layer": "",
+          "name": "NewSprite",
+          "persistentUuid": "9415b5f7-8769-4e99-8845-9e449fdba12d",
+          "width": 1312,
+          "x": 0,
+          "y": 608,
+          "zOrder": 24,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3087,6 +3098,67 @@
           "variables": [],
           "effects": [],
           "behaviors": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "NewSprite",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "NewSprite",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "NewSprite",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 64
+                          },
+                          {
+                            "x": 0,
+                            "y": 64
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -3151,11 +3223,15 @@
           },
           {
             "objectName": "Death"
+          },
+          {
+            "objectName": "NewSprite"
           }
         ]
       },
       "events": [
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -4322,12 +4398,28 @@
           "type": "AnchorBehavior::AnchorBehavior"
         },
         {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
           "name": "FireBullet",
           "type": "FireBullet::FireBullet"
         },
         {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
           "name": "MultitouchButton",
           "type": "SpriteMultitouchJoystick::MultitouchButton"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
         },
         {
           "name": "Platform",
@@ -4342,12 +4434,24 @@
           "type": "PlatformBehavior::PlatformerObjectBehavior"
         },
         {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
           "name": "SmoothCamera",
           "type": "SmoothCamera::SmoothCamera"
         },
         {
           "name": "SmoothPlatformerCamera",
           "type": "SmoothCamera::SmoothPlatformerCamera"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
         }
       ]
     }
